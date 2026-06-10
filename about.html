@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About BioNexus — Our Story & Mission</title>
+  <meta name="description" content="Learn about BioNexus's mission to revolutionize biotechnology through AI-powered genomics and precision medicine.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ABOUT PAGE SPECIFIC */
+    .about-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 7% 80px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(86,210,255,0.15), transparent 50%),
+        linear-gradient(135deg, #010611, #04172d, #021327);
+    }
+    .about-hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(86,210,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86,210,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .about-hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .about-hero p {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .team-section {
+      padding: 100px 7%;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .team-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 28px;
+      transition: all 0.4s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(86,210,255,0.25);
+      box-shadow: 0 20px 50px rgba(86,210,255,0.1);
+    }
+    .team-avatar {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .team-card h3 { font-size: 17px; color: var(--white); margin-bottom: 6px; }
+    .team-card span { font-size: 13px; color: var(--primary); }
+    .team-card p { font-size: 13px; color: var(--text-muted); padding: 12px 20px 0; line-height: 1.6; }
+    .team-socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .team-socials a {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .team-socials a:hover {
+      background: rgba(86,210,255,0.1);
+      border-color: rgba(86,210,255,0.3);
+      color: var(--primary);
+    }
+    .mission-section {
+      padding: 100px 7%;
+      background: rgba(255,255,255,0.02);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .mission-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+    .mission-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(86,210,255,0.25);
+      box-shadow: 0 20px 50px rgba(86,210,255,0.08);
+    }
+    .mission-icon {
+      font-size: 44px;
+      margin-bottom: 20px;
+    }
+    .mission-card h3 { font-size: 20px; margin-bottom: 14px; }
+    .mission-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .mission-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+   <div class="logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="logo-img">
+</div>
+    <nav id="nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link active">ABOUT</a>
+      <a href="blog.html" class="nav-link">BLOG</a>
+      <a href="careers.html" class="nav-link">CAREERS</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="header-right">
+      <a href="login.html" class="btn-login">Log In</a>
+      <a href="signup.html" class="btn-signup">Sign Up Free</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span class="logo-text" style="color:#56d2ff;font-weight:800;font-size:22px;">STACKLY</span>
+      <button class="mobile-close" id="menuClose"><i class="fas fa-times"></i></button>
+    </div>
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="blog.html">BLOG</a>
+    <a href="careers.html">CAREERS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html" class="mobile-login">LOG IN</a>
+    <a href="signup.html" class="mobile-signup">SIGN UP FREE</a>
+  </div>
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div>
+      <span class="section-tag">Our Story</span>
+      <h1>Advancing Science,<br><span class="gradient-text">Changing Lives</span></h1>
+      <p>BioNexus was founded with a singular vision: to harness the power of genomics and AI to transform how diseases are understood and treated.</p>
+    </div>
+  </section>
+  <!-- ABOUT SECTION (reusing home style) -->
+  <section class="about-section">
+    <div class="about-left">
+      <div class="about-img-wrap">
+        <img src="Assests/about.webp" alt="BioNexus Team">
+        <div class="about-badge">
+          <i class="fas fa-award"></i>
+          <div>
+            <strong>Founded 2009</strong>
+            <span>15+ years of innovation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <span class="section-tag">Who We Are</span>
+      <h2>The Science Behind<br><span class="gradient-text">Stackly</span></h2>
+      <p class="about-text">
+        BioNexus began as a small genomics startup in Boston, MA. Over 15 years, we've grown to become a global biotechnology platform serving over 500,000 patients and partnering with 120+ leading research institutions.
+      </p>
+      <p class="about-text">
+        Our interdisciplinary team of molecular biologists, data scientists, clinicians and engineers collaborate daily to push the boundaries of what's scientifically and technologically possible.
+      </p>
+      <p class="about-text">
+        We believe precision medicine should be accessible to everyone. Our cloud-native platform democratizes access to advanced genomic tools, bringing the power of personalized medicine to clinics worldwide.
+      </p>
+      <a href="contact.html" class="btn-primary" style="margin-top:28px;display:inline-flex;">Partner With Us <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+  <!-- MISSION SECTION -->
+  <section class="mission-section">
+    <div class="section-header">
+      <span class="section-tag">Our Values</span>
+      <h2>What Drives <span class="gradient-text">Everything We Do</span></h2>
+      <p>Our core values guide every experiment, every product decision and every patient interaction.</p>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon">🔬</div>
+        <h3>Scientific Rigor</h3>
+        <p>Every claim we make is backed by peer-reviewed evidence. We apply the highest scientific standards to our algorithms, datasets and clinical workflows.</p>
+      </div>
+      <div class="mission-card" style="background:linear-gradient(135deg,rgba(86,210,255,0.07),rgba(15,164,175,0.04));border-color:rgba(86,210,255,0.2);">
+        <div class="mission-icon">🤝</div>
+        <h3>Patient First</h3>
+        <p>Everything we build starts with the patient. We obsess over outcomes, privacy and accessibility to ensure our technology truly benefits the people who need it most.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon">🌍</div>
+        <h3>Open Innovation</h3>
+        <p>We share our findings through publications, open datasets and API access because we believe scientific progress accelerates when knowledge is shared freely.</p>
+      </div>
+    </div>
+  </section>
+  <!-- TEAM SECTION -->
+  <section class="team-section">
+    <div class="section-header">
+      <span class="section-tag">Leadership Team</span>
+      <h2>Meet the <span class="gradient-text">Visionaries</span></h2>
+      <p>Our leadership combines decades of experience in molecular biology, AI research and healthcare innovation.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,rgba(86,210,255,0.15),rgba(15,164,175,0.1));">👩‍🔬</div>
+        <h3>Dr. Ananya Krishnan</h3>
+        <span>CEO & Co-Founder</span>
+        <p>Former MIT professor in computational genomics. PhD from Harvard Medical School.</p>
+        <div class="team-socials">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(167,139,250,0.1));">👨‍💻</div>
+        <h3>Dr. Marcus Chen</h3>
+        <span>CTO & Co-Founder</span>
+        <p>Former Google DeepMind research scientist. Expert in deep learning for biology.</p>
+        <div class="team-socials">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(251,191,36,0.1));">👩‍⚕️</div>
+        <h3>Dr. Sarah Okafor</h3>
+        <span>Chief Medical Officer</span>
+        <p>Board-certified geneticist. 18+ years of clinical genomics at Johns Hopkins.</p>
+        <div class="team-socials">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(52,211,153,0.1));">👨‍🔬</div>
+        <h3>Dr. Raj Patel</h3>
+        <span>VP of Research</span>
+        <p>Led CRISPR research programs at the Broad Institute for 8 years.</p>
+        <div class="team-socials">
+          <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+          <a href="404.html"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-content">
+      <span class="section-tag">Join Our Mission</span>
+      <h2>Be Part of the <span class="gradient-text">Next Breakthrough</span></h2>
+      <p>Whether you're a researcher, clinician or investor, BioNexus has a place for you.</p>
+      <div class="cta-actions">
+        <a href="careers.html" class="btn-primary btn-large">View Careers <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn-ghost">Contact Us</a>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="17" stroke="#56d2ff" stroke-width="1.5"/>
+            <path d="M11 8 Q18 13 25 8 Q18 13 11 18 Q18 23 25 18 Q18 23 11 28" stroke="#56d2ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M25 8 Q18 13 11 8 Q18 13 25 18 Q18 23 11 18 Q18 23 25 28" stroke="#0fa4af" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span>BIONEXUS</span>
+        </div>
+        <p>Advancing human health through the power of genomics, artificial intelligence and precision medicine.</p>
+        <div class="footer-socials">
+          <a href="404.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="404.html">Genetic Sequencing</a></li>
+            <li><a href="404.html">Lab Management</a></li>
+            <li><a href="404.html">AI Diagnostics</a></li>
+            <li><a href="404.html">Clinical Trials</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BioNexus, Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

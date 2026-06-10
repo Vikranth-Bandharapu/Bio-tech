@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioNexus — Revolutionizing Biotechnology</title>
+  <meta name="description" content="BioNexus delivers AI-powered genetic sequencing, advanced lab management, and precision diagnostics for the future of biotechnology.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+   <div class="logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="logo-img">
+</div>
+    <nav id="nav">
+      <a href="home.html" class="nav-link active">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="blog.html" class="nav-link">BLOG</a>
+      <a href="careers.html" class="nav-link">CAREERS</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="header-right">
+      <a href="login.html" class="btn-login">Log In</a>
+      <a href="signup.html" class="btn-signup">Sign Up Free</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span class="logo-text" style="color:#56d2ff;font-weight:800;font-size:22px;">STACKLY</span>
+      <button class="mobile-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="blog.html">BLOG</a>
+    <a href="careers.html">CAREERS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html" class="mobile-login">LOG IN</a>
+    <a href="signup.html" class="mobile-signup">SIGN UP FREE</a>
+  </div>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section" id="hero">
+    <!-- Floating particle dots -->
+    <div class="particle" style="left:10%;top:20%;animation-delay:0s;width:6px;height:6px;"></div>
+    <div class="particle" style="left:20%;top:60%;animation-delay:1.2s;width:4px;height:4px;"></div>
+    <div class="particle" style="left:75%;top:15%;animation-delay:0.7s;width:5px;height:5px;"></div>
+    <div class="particle" style="left:85%;top:70%;animation-delay:2s;width:3px;height:3px;"></div>
+    <div class="particle" style="left:50%;top:80%;animation-delay:1.5s;width:7px;height:7px;"></div>
+    <div class="particle" style="left:35%;top:35%;animation-delay:0.3s;width:4px;height:4px;"></div>
+    <!-- Animated grid -->
+    <div class="hero-grid"></div>
+    <div class="hero-left">
+      <span class="hero-tag">
+        <i class="fas fa-dna"></i> Revolutionize Your Science
+      </span>
+      <h1 class="hero-title">
+        Intuitive Solutions for<br>
+        <span class="gradient-text">Complex</span> Challenges
+      </h1>
+      <p class="hero-subtitle">
+        Streamline your biotech processes and enhance research productivity with our all-in-one AI-powered biotechnology platform.
+      </p>
+      <div class="hero-actions">
+        <a href="signup.html" class="btn-primary">Try for Free <i class="fas fa-arrow-right"></i></a>
+        <a href="#services" class="btn-ghost"><i class="fas fa-play-circle"></i> Watch Demo</a>
+      </div>
+      <div class="hero-ratings">
+        <div class="rating-badge"><i class="fas fa-star"></i> 4.8 App Store</div>
+        <div class="rating-badge"><i class="fab fa-google-play"></i> 4.7 Play Store</div>
+        <div class="rating-badge"><i class="fas fa-shield-alt"></i> HIPAA Compliant</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-image-card">
+        <img src="Assests/hero.webp" alt="Biotech Laboratory">
+        <!-- Floating stat card -->
+        <div class="stat-card stat-card-1">
+          <div class="stat-icon"><i class="fas fa-dna"></i></div>
+          <div>
+            <div class="stat-num">98.6%</div>
+            <div class="stat-label">Sequencing Accuracy</div>
+          </div>
+        </div>
+        <!-- Floating stat card 2 -->
+        <div class="stat-card stat-card-2">
+          <div class="stat-icon"><i class="fas fa-vial"></i></div>
+          <div>
+            <div class="stat-num">50K+</div>
+            <div class="stat-label">Tests Processed</div>
+          </div>
+        </div>
+      </div>
+      <!-- SVG Line graph overlay -->
+      <div class="hero-graph">
+        <svg viewBox="0 0 500 220" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#0fa4af"/>
+              <stop offset="100%" stop-color="#56d2ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M10 180 L80 160 L150 170 L220 115 L280 135 L350 75 L420 90 L490 20"
+                fill="none" stroke="url(#lineGrad)" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round"
+                class="graph-line"/>
+          <path d="M10 180 L80 160 L150 170 L220 115 L280 135 L350 75 L420 90 L490 20 L490 220 L10 220Z"
+                fill="url(#lineGrad)" opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <!-- ========== STATS STRIP ========== -->
+  <section class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-value" data-target="500">0</span><span>K+</span>
+      <div class="stat-desc">Patients Served</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-value" data-target="98">0</span><span>%</span>
+      <div class="stat-desc">Diagnostic Accuracy</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-value" data-target="120">0</span><span>+</span>
+      <div class="stat-desc">Research Partners</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-value" data-target="15">0</span><span>+</span>
+      <div class="stat-desc">Years of Innovation</div>
+    </div>
+  </section>
+  <!-- ========== SERVICES SECTION ========== -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <span class="section-tag">Our Services</span>
+      <h2>Cutting-Edge Biotech <span class="gradient-text">Solutions</span></h2>
+      <p>We offer a comprehensive suite of biotechnology services powered by advanced AI and machine learning.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-icon"><i class="fas fa-dna"></i></div>
+        <h3>Genetic Sequencing</h3>
+        <p>Next-generation whole-genome and targeted sequencing with industry-leading accuracy rates and rapid turnaround times.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Whole Genome Sequencing</li>
+          <li><i class="fas fa-check"></i> Targeted Panel Testing</li>
+          <li><i class="fas fa-check"></i> Real-time Analysis</li>
+        </ul>
+        <a href="#" class="service-link">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-microscope"></i></div>
+        <h3>Lab Management</h3>
+        <p>End-to-end laboratory information management system that streamlines workflows and ensures compliance.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Sample Tracking</li>
+          <li><i class="fas fa-check"></i> Automated Reporting</li>
+          <li><i class="fas fa-check"></i> Inventory Management</li>
+        </ul>
+        <a href="#" class="service-link">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-brain"></i></div>
+        <h3>AI Diagnostics</h3>
+        <p>Machine learning algorithms trained on millions of samples deliver faster, more accurate diagnostic insights.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Predictive Analytics</li>
+          <li><i class="fas fa-check"></i> Pattern Recognition</li>
+          <li><i class="fas fa-check"></i> Anomaly Detection</li>
+        </ul>
+        <a href="#" class="service-link">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-file-medical-alt"></i></div>
+        <h3>Medical Records</h3>
+        <p>Secure, integrated electronic health records system with seamless connectivity across healthcare providers.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> HIPAA Compliant</li>
+          <li><i class="fas fa-check"></i> Cloud Encrypted</li>
+          <li><i class="fas fa-check"></i> HL7 FHIR Ready</li>
+        </ul>
+        <a href="#" class="service-link">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-flask"></i></div>
+        <h3>Clinical Trials</h3>
+        <p>Comprehensive trial management platform from protocol design to data collection and regulatory submission.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Protocol Management</li>
+          <li><i class="fas fa-check"></i> Site Monitoring</li>
+          <li><i class="fas fa-check"></i> eCRF & CTMS</li>
+        </ul>
+        <a href="#" class="service-link">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-satellite-dish"></i></div>
+        <h3>Research Insights</h3>
+        <p>Data-driven research intelligence platform connecting your findings with global genomic databases.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Literature Mining</li>
+          <li><i class="fas fa-check"></i> Variant Annotation</li>
+          <li><i class="fas fa-check"></i> Publication Engine</li>
+        </ul>
+        <a href="#" class="service-link">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about-section" id="about">
+    <div class="about-left">
+      <div class="about-img-wrap">
+        <img src="Assests/about.webp" alt="About BioNexus">
+        <div class="about-badge">
+          <i class="fas fa-award"></i>
+          <div>
+            <strong>ISO 27001</strong>
+            <span>Certified Lab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <span class="section-tag">Who We Are</span>
+      <h2>Leading the Future of <span class="gradient-text">Biotechnology</span></h2>
+      <p class="about-text">
+        Founded in 2009, BioNexus has been at the forefront of biotechnology innovation, combining advanced molecular biology with cutting-edge artificial intelligence to transform how diseases are diagnosed and treated.
+      </p>
+      <p class="about-text">
+        Our team of over 500 scientists, engineers and healthcare professionals work together to deliver solutions that save lives and advance scientific understanding.
+      </p>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-shield-virus"></i></div>
+          <div>
+            <strong>Precision Medicine</strong>
+            <p>Tailoring treatments to individual genetic profiles</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+          <div>
+            <strong>Rapid Innovation</strong>
+            <p>From research to clinical application faster than ever</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-globe-americas"></i></div>
+          <div>
+            <strong>Global Network</strong>
+            <p>Connected to 120+ research institutions worldwide</p>
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="btn-primary" style="margin-top:30px;display:inline-flex;">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+  <!-- ========== PIPELINE / PROCESS SECTION ========== -->
+  <section class="pipeline-section">
+    <div class="section-header">
+      <span class="section-tag">Our Process</span>
+      <h2>From Sample to <span class="gradient-text">Insight</span></h2>
+      <p>Our streamlined workflow delivers results you can trust in record time.</p>
+    </div>
+    <div class="pipeline-steps">
+      <div class="pipeline-step">
+        <div class="step-num">01</div>
+        <div class="step-icon"><i class="fas fa-vial"></i></div>
+        <h3>Sample Collection</h3>
+        <p>Secure, standardized collection kits with real-time chain-of-custody tracking from patient to lab.</p>
+      </div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step">
+        <div class="step-num">02</div>
+        <div class="step-icon"><i class="fas fa-cogs"></i></div>
+        <h3>Processing & QC</h3>
+        <p>Automated quality control pipelines ensure samples meet our rigorous standards before analysis begins.</p>
+      </div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step">
+        <div class="step-num">03</div>
+        <div class="step-icon"><i class="fas fa-microchip"></i></div>
+        <h3>AI Analysis</h3>
+        <p>Our deep learning models process sequencing data to identify variants, mutations, and meaningful patterns.</p>
+      </div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step">
+        <div class="step-num">04</div>
+        <div class="step-icon"><i class="fas fa-file-medical"></i></div>
+        <h3>Clinical Report</h3>
+        <p>Comprehensive, physician-ready reports delivered securely to your portal within 24-72 hours.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ========== TECHNOLOGY SECTION ========== -->
+  <section class="tech-section">
+    <div class="tech-left">
+      <span class="section-tag">Our Technology</span>
+      <h2>Powered by <span class="gradient-text">Advanced AI</span></h2>
+      <p class="tech-text">
+        BioNexus's proprietary machine learning engine has been trained on over 10 million genomic datasets, giving it unparalleled ability to detect subtle genetic variants that traditional methods miss.
+      </p>
+      <div class="tech-stats">
+        <div class="tech-stat">
+          <div class="tech-stat-bar">
+            <div class="tech-stat-label">
+              <span>Sequencing Accuracy</span>
+              <span>98.6%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:98.6%"></div></div>
+          </div>
+        </div>
+        <div class="tech-stat">
+          <div class="tech-stat-bar">
+            <div class="tech-stat-label">
+              <span>Variant Detection Rate</span>
+              <span>96.2%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:96.2%"></div></div>
+          </div>
+        </div>
+        <div class="tech-stat">
+          <div class="tech-stat-bar">
+            <div class="tech-stat-label">
+              <span>Processing Speed</span>
+              <span>94.5%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:94.5%;"></div></div>
+          </div>
+        </div>
+        <div class="tech-stat">
+          <div class="tech-stat-bar">
+            <div class="tech-stat-label">
+              <span>Data Security Score</span>
+              <span>99.9%</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:99.9%;background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tech-right">
+      <div class="dna-visual">
+        <img src="Assests/dna.webp" alt="DNA Visualization">
+        <div class="tech-orb tech-orb-1"></div>
+        <div class="tech-orb tech-orb-2"></div>
+      </div>
+      <!-- Floating info chips -->
+      <div class="tech-chip chip-1">
+        <i class="fas fa-atom"></i>
+        <span>NGS Platform v4.2</span>
+      </div>
+      <div class="tech-chip chip-2">
+        <i class="fas fa-cloud"></i>
+        <span>Cloud-Native</span>
+      </div>
+      <div class="tech-chip chip-3">
+        <i class="fas fa-lock"></i>
+        <span>256-bit Encryption</span>
+      </div>
+    </div>
+  </section>
+  <!-- ========== BLOG / INSIGHTS SECTION ========== -->
+  <section class="blog-section" id="blog">
+    <div class="section-header">
+      <span class="section-tag">Research & Insights</span>
+      <h2>Latest from <span class="gradient-text">BioNexus</span></h2>
+      <p>Stay at the frontier of biotechnology with our research updates and thought leadership.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card featured-post">
+        <div class="blog-img">
+          <img src="Assests/lab.webp" alt="CRISPR Breakthroughs">
+          <span class="blog-category">Genomics</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> June 5, 2026</span>
+            <span><i class="fas fa-clock"></i> 6 min read</span>
+          </div>
+          <h3>CRISPR-Cas9 Breakthroughs: What 2026 Means for Gene Therapy</h3>
+          <p>Recent advances in base editing and prime editing are pushing CRISPR gene therapy into unprecedented territory, with clinical trials showing remarkable results for previously untreatable conditions.</p>
+          <a href="blog.html" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img blog-img-sm">
+          <img src="Assests/hero.webp" alt="Liquid Biopsy">
+          <span class="blog-category">Diagnostics</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> May 28, 2026</span>
+            <span><i class="fas fa-clock"></i> 4 min read</span>
+          </div>
+          <h3>Liquid Biopsy: A New Frontier in Cancer Detection</h3>
+          <p>Our latest ctDNA sequencing platform detects circulating tumor DNA with sub-1% variant allele frequencies.</p>
+          <a href="blog.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img blog-img-sm">
+          <img src="Assests/dna.webp" alt="AI Protein Folding">
+          <span class="blog-category">AI Research</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> May 18, 2026</span>
+            <span><i class="fas fa-clock"></i> 5 min read</span>
+          </div>
+          <h3>AI-Driven Protein Structure Prediction Reaches New Milestones</h3>
+          <p>BioNexus's ProteinNet model achieves near-experimental accuracy for de novo structure prediction.</p>
+          <a href="blog.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:50px;">
+      <a href="blog.html" class="btn-outline">View All Articles <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <span class="section-tag">Testimonials</span>
+      <h2>Trusted by <span class="gradient-text">Leading Researchers</span></h2>
+      <p>What scientists and clinicians are saying about BioNexus.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <p>"BioNexus's sequencing platform reduced our variant calling time by 70%. The AI insights are genuinely transformative for our oncology research pipeline."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg,#0fa4af,#56d2ff);">DR</div>
+          <div>
+            <strong>Dr. Rebecca Torres</strong>
+            <span>Chief Genomicist, MedGen Institute</span>
+          </div>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+      <div class="testimonial-card featured-testimonial">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <p>"The lab management module alone saved our team 15 hours per week. The seamless integration with our existing EHR was the most painless deployment I've experienced in 20 years."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg,#6366f1,#a78bfa);">PJ</div>
+          <div>
+            <strong>Prof. James Okonkwo</strong>
+            <span>Director, Stanford Precision Lab</span>
+          </div>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <p>"Their HIPAA-compliant cloud infrastructure gives us the confidence to handle sensitive patient data. BioNexus is the gold standard for biotech data security."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg,#f59e0b,#fbbf24);">SM</div>
+          <div>
+            <strong>Sarah Mehta, MD</strong>
+            <span>Clinical Director, GenomeCare Health</span>
+          </div>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-content">
+      <span class="section-tag">Get Started Today</span>
+      <h2>Ready to Transform Your <span class="gradient-text">Research?</span></h2>
+      <p>Join 500+ leading research institutions using BioNexus to power breakthrough discoveries.</p>
+      <div class="cta-actions">
+        <a href="signup.html" class="btn-primary btn-large">Start Free Trial <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn-ghost">Schedule a Demo</a>
+      </div>
+      <div class="cta-partners">
+        <span>Trusted by teams at</span>
+        <div class="partner-logos">
+          <span>MIT</span>
+          <span>Harvard Med</span>
+          <span>Johns Hopkins</span>
+          <span>Mayo Clinic</span>
+          <span>Stanford</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="logo-img">
+</div>
+        <p>Advancing human health through the power of genomics, artificial intelligence and precision medicine.</p>
+        <div class="footer-socials">
+          <a href="404.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="404.html">Genetic Sequencing</a></li>
+            <li><a href="404.html">Lab Management</a></li>
+            <li><a href="404.html">AI Diagnostics</a></li>
+            <li><a href="404.html">Clinical Trials</a></li>
+            <li><a href="404.html">Medical Records</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="404.html">Documentation</a></li>
+            <li><a href="404.html">API Reference</a></li>
+            <li><a href="404.html">Research Papers</a></li>
+            <li><a href="404.html">Compliance</a></li>
+            <li><a href="404.html">Status Page</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BioNexus, Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

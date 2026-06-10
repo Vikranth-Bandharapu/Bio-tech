@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — BioNexus Research & Insights</title>
+  <meta name="description" content="Explore the latest research, insights and breakthroughs from the BioNexus team and the broader biotech community.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 7% 70px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(86,210,255,0.13), transparent 50%),
+        linear-gradient(135deg, #010611, #04172d, #021327);
+    }
+    .page-hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(86,210,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86,210,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .page-hero h1 { font-size: clamp(36px,5vw,60px); font-weight:800; margin-bottom:16px; position:relative; }
+    .page-hero p { font-size: 18px; color: var(--text-muted); max-width: 580px; margin: 0 auto; position:relative; }
+    /* Blog Filter Tabs */
+    .blog-filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 9px 22px;
+      border-radius: 30px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(86,210,255,0.1);
+      border-color: rgba(86,210,255,0.35);
+      color: var(--primary);
+    }
+    /* Full Blog Grid */
+    .full-blog-section {
+      padding: 70px 7% 100px;
+    }
+    .full-blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .newsletter-section {
+      padding: 80px 7%;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      flex: 1;
+      max-width: 400px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px;
+      color: white;
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      transition: all 0.3s;
+    }
+    .newsletter-form input:focus {
+      border-color: rgba(86,210,255,0.4);
+      background: rgba(86,210,255,0.04);
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+    @media (max-width: 900px) {
+      .full-blog-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 600px) {
+      .full-blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="logo-img">
+</div>
+    <nav id="nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="blog.html" class="nav-link active">BLOG</a>
+      <a href="careers.html" class="nav-link">CAREERS</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="header-right">
+      <a href="login.html" class="btn-login">Log In</a>
+      <a href="signup.html" class="btn-signup">Sign Up Free</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span class="logo-text" style="color:#56d2ff;font-weight:800;font-size:22px;">STACKLY</span>
+      <button class="mobile-close" id="menuClose"><i class="fas fa-times"></i></button>
+    </div>
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="blog.html">BLOG</a>
+    <a href="careers.html">CAREERS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html" class="mobile-login">LOG IN</a>
+    <a href="signup.html" class="mobile-signup">SIGN UP FREE</a>
+  </div>
+  <section class="page-hero">
+    <div>
+      <span class="section-tag">Research & Insights</span>
+      <h1>BioNexus <span class="gradient-text">Blog</span></h1>
+      <p>Explore cutting-edge research, platform updates and thought leadership from the world of biotechnology.</p>
+    </div>
+  </section>
+  <section class="full-blog-section">
+    <div class="blog-filters">
+      <button class="filter-btn active" onclick="filterPosts(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterPosts(this,'genomics')">Genomics</button>
+      <button class="filter-btn" onclick="filterPosts(this,'diagnostics')">Diagnostics</button>
+      <button class="filter-btn" onclick="filterPosts(this,'ai')">AI Research</button>
+      <button class="filter-btn" onclick="filterPosts(this,'clinical')">Clinical</button>
+      <button class="filter-btn" onclick="filterPosts(this,'platform')">Platform</button>
+    </div>
+    <div class="full-blog-grid" id="blogGrid">
+      <!-- Post 1 -->
+      <article class="blog-card" data-cat="genomics">
+        <div class="blog-img">
+          <img src="Assests/lab.webp" alt="CRISPR 2026">
+          <span class="blog-category">Genomics</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> June 5, 2026</span>
+            <span><i class="fas fa-clock"></i> 6 min</span>
+          </div>
+          <h3>CRISPR-Cas9 in 2026: Base Editing Enters the Clinic</h3>
+          <p>Prime editing and base editing are now in Phase II/III trials for multiple monogenic diseases with remarkable safety profiles.</p>
+          <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <!-- Post 2 -->
+      <article class="blog-card" data-cat="diagnostics">
+        <div class="blog-img">
+          <img src="Assests/hero.webp" alt="Liquid Biopsy">
+          <span class="blog-category">Diagnostics</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> May 28, 2026</span>
+            <span><i class="fas fa-clock"></i> 4 min</span>
+          </div>
+          <h3>Liquid Biopsy Sensitivity Breaks the 0.1% VAF Barrier</h3>
+          <p>Our ctDNA platform now detects circulating tumor DNA at variant allele frequencies below 0.1%, opening new frontiers in early cancer detection.</p>
+          <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <!-- Post 3 -->
+      <article class="blog-card" data-cat="ai">
+        <div class="blog-img">
+          <img src="Assests/dna.webp" alt="AI Protein">
+          <span class="blog-category">AI Research</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> May 18, 2026</span>
+            <span><i class="fas fa-clock"></i> 5 min</span>
+          </div>
+          <h3>ProteinNet v3: Near-Experimental Accuracy for De Novo Design</h3>
+          <p>BioNexus's latest protein structure prediction model achieves sub-2Å RMSD for 89% of novel enzyme designs.</p>
+          <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <!-- Post 4 -->
+      <article class="blog-card" data-cat="clinical">
+        <div class="blog-img">
+          <img src="Assests/about.webp" alt="Clinical Trials">
+          <span class="blog-category">Clinical</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> May 10, 2026</span>
+            <span><i class="fas fa-clock"></i> 7 min</span>
+          </div>
+          <h3>Decentralized Clinical Trials: Lessons from 50+ DCT Studies</h3>
+          <p>How remote patient monitoring and electronic consent are transforming trial recruitment and retention rates globally.</p>
+          <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <!-- Post 5 -->
+      <article class="blog-card" data-cat="platform">
+        <div class="blog-img">
+          <img src="Assests/hero.webp" alt="Platform Update">
+          <span class="blog-category">Platform</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> May 2, 2026</span>
+            <span><i class="fas fa-clock"></i> 3 min</span>
+          </div>
+          <h3>BioNexus Platform 4.0: What's New</h3>
+          <p>Real-time collaborative annotation, multi-omics integration and a new genomic variant API are live today.</p>
+          <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <!-- Post 6 -->
+      <article class="blog-card" data-cat="genomics">
+        <div class="blog-img">
+          <img src="Assests/dna.webp" alt="Epigenomics">
+          <span class="blog-category">Genomics</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> Apr 22, 2026</span>
+            <span><i class="fas fa-clock"></i> 8 min</span>
+          </div>
+          <h3>Epigenomics at Scale: Mapping Methylation Across 100K Samples</h3>
+          <p>Our Methylation Atlas project reveals tissue-specific epigenetic signatures with unprecedented resolution and coverage.</p>
+          <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <span class="section-tag">Stay Updated</span>
+    <h2>Subscribe to Our <span class="gradient-text">Research Newsletter</span></h2>
+    <p style="color:var(--text-muted);margin-top:12px;font-size:17px;">Delivered bi-weekly. No spam, ever. Unsubscribe anytime.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" id="newsletterEmail" placeholder="your@institution.edu" required>
+      <button type="submit" class="btn-primary">Subscribe <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </section>
+  <!-- FOOTER MINIMAL -->
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 BioNexus, Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+  <script>
+    function filterPosts(btn, cat) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#blogGrid .blog-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+      btn.style.background = '#10b981';
+      setTimeout(() => {
+        btn.innerHTML = 'Subscribe <i class="fas fa-paper-plane"></i>';
+        btn.style.background = '';
+        document.getElementById('newsletterEmail').value = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

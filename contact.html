@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact BioNexus — Get in Touch</title>
+  <meta name="description" content="Contact the BioNexus team for partnerships, demos, support and general inquiries.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-section {
+      min-height: 100vh;
+      padding: 140px 7% 100px;
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(86,210,255,0.1), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(15,164,175,0.08), transparent 40%),
+        linear-gradient(135deg, #010611, #04172d, #021327);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-section::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(86,210,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86,210,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .contact-left {
+      width: 40%;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-left h1 { font-size: clamp(32px,4vw,50px); font-weight: 800; margin-bottom: 16px; line-height:1.2; }
+    .contact-left > p { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 48px; }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .contact-info-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(86,210,255,0.12), rgba(15,164,175,0.08));
+      border: 1px solid rgba(86,210,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .contact-info-item h4 { font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 500; margin-bottom: 4px; }
+    .contact-info-item p { font-size: 16px; color: var(--white); font-weight: 600; }
+    .contact-socials {
+      display: flex;
+      gap: 14px;
+      margin-top: 48px;
+    }
+    .contact-social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 17px;
+      transition: all 0.3s;
+    }
+    .contact-social-link:hover {
+      background: rgba(86,210,255,0.1);
+      border-color: rgba(86,210,255,0.3);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    /* Contact Form */
+    .contact-form-wrap {
+      flex: 1;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 50px 44px;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-form-wrap h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+    .contact-form-wrap > p { font-size: 15px; color: var(--text-muted); margin-bottom: 36px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.65); margin-bottom: 8px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: white;
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      transition: all 0.3s;
+      resize: vertical;
+    }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: #04172d; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(86,210,255,0.45);
+      background: rgba(86,210,255,0.04);
+      box-shadow: 0 0 0 3px rgba(86,210,255,0.08);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group textarea { min-height: 130px; }
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      background: white;
+      color: #001324;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 8px;
+    }
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(86,210,255,0.2);
+    }
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.3);
+      border-radius: 12px;
+      color: #34d399;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    @media (max-width: 900px) {
+      .contact-section { flex-direction: column; gap: 50px; }
+      .contact-left { width: 100%; }
+      .contact-form-wrap { padding: 36px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+   <div class="logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="logo-img">
+</div>
+    <nav id="nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="blog.html" class="nav-link">BLOG</a>
+      <a href="careers.html" class="nav-link">CAREERS</a>
+      <a href="contact.html" class="nav-link active">CONTACT</a>
+    </nav>
+    <div class="header-right">
+      <a href="login.html" class="btn-login">Log In</a>
+      <a href="signup.html" class="btn-signup">Sign Up Free</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span class="logo-text" style="color:#56d2ff;font-weight:800;font-size:22px;">STACKLY</span>
+      <button class="mobile-close" id="menuClose"><i class="fas fa-times"></i></button>
+    </div>
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="blog.html">BLOG</a>
+    <a href="careers.html">CAREERS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html" class="mobile-login">LOG IN</a>
+    <a href="signup.html" class="mobile-signup">SIGN UP FREE</a>
+  </div>
+  <section class="contact-section">
+    <div class="contact-left">
+      <span class="section-tag">Contact Us</span>
+      <h1>Let's Talk<br><span class="gradient-text">Science</span></h1>
+      <p>Whether you're interested in a platform demo, research partnership, or just have a question, we'd love to hear from you.</p>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4>Headquarters</h4>
+          <p>One Kendall Square, Cambridge, MA 02139</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4>Email</h4>
+          <p>stackly@.com</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <h4>Phone</h4>
+          <p>+1 (617) 555-0198</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <h4>Support Hours</h4>
+          <p>Mon–Fri, 8am–8pm EST</p>
+        </div>
+      </div>
+      <div class="contact-socials">
+        <a href="404.html" class="contact-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="404.html" class="contact-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="404.html" class="contact-social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="404.html" class="contact-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <h2>Send a <span class="gradient-text">Message</span></h2>
+      <p>We typically respond within one business day.</p>
+      <form id="contactForm" onsubmit="handleContact(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cFirstName">First Name</label>
+            <input type="text" id="cFirstName" placeholder="Your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="cLastName">Last Name</label>
+            <input type="text" id="cLastName" placeholder="Your last name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cEmail">Email Address</label>
+          <input type="email" id="cEmail" placeholder="you@institution.edu" required>
+        </div>
+        <div class="form-group">
+          <label for="cOrg">Organization</label>
+          <input type="text" id="cOrg" placeholder="Your institution or company">
+        </div>
+        <div class="form-group">
+          <label for="cSubject">Subject</label>
+          <select id="cSubject">
+            <option value="">Select inquiry type...</option>
+            <option>Platform Demo Request</option>
+            <option>Research Partnership</option>
+            <option>Technical Support</option>
+            <option>Investment / Business</option>
+            <option>Press / Media</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" placeholder="Tell us about your project, question or collaboration idea..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="contactBtn">
+          Send Message <i class="fas fa-paper-plane" style="margin-left:8px;"></i>
+        </button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        <i class="fas fa-check-circle" style="font-size:24px;margin-bottom:8px;display:block;"></i>
+        Message sent successfully! We'll be in touch within one business day.
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 BioNexus, Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="404.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+  <script>
+    function handleContact(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contactBtn');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioNexus Login — Secure Access</title>
+  <meta name="description" content="Log in to your BioNexus account to access your lab data, reports and AI insights.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      background: #010611;
+      color: white;
+      overflow: hidden;
+    }
+    /* LEFT PANEL */
+    .auth-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(86,210,255,0.18), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(15,164,175,0.12), transparent 40%),
+        linear-gradient(135deg,#010611,#04172d,#021327);
+    }
+    .auth-left-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 480px;
+      width: 100%;
+    }
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .auth-logo span {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg,#0fa4af,#56d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .auth-left h1 {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg,#0fa4af,#56d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .auth-left p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 40px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .input-wrap {
+      position: relative;
+    }
+    .input-wrap i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #56d2ff;
+      font-size: 15px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px 14px 44px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: white;
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: rgba(86,210,255,0.5);
+      background: rgba(86,210,255,0.05);
+      box-shadow: 0 0 0 3px rgba(86,210,255,0.1);
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+    }
+    .remember-me input { width: auto; }
+    .forgot-link {
+      font-size: 13px;
+      color: #56d2ff;
+      text-decoration: none;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+    .btn-auth {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      background: white;
+      color: #001324;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-auth:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(86,210,255,0.25);
+    }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255,255,255,0.3);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .btn-social {
+      width: 100%;
+      padding: 13px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 12px;
+    }
+    .btn-social:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .auth-footer {
+      text-align: center;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 24px;
+    }
+    .auth-footer a {
+      color: #56d2ff;
+      font-weight: 600;
+    }
+    /* RIGHT PANEL */
+    .auth-right {
+      width: 420px;
+      background: linear-gradient(135deg, rgba(86,210,255,0.06), rgba(15,164,175,0.04));
+      border-left: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-right::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle,rgba(86,210,255,0.12),transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      filter: blur(40px);
+    }
+    .auth-right-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .auth-dna-svg {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 30px;
+      animation: rotate 8s linear infinite;
+    }
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+    .auth-right h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .auth-right p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .auth-features {
+      list-style: none;
+      text-align: left;
+    }
+    .auth-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 14px;
+    }
+    .auth-features li i {
+      color: #56d2ff;
+      font-size: 14px;
+      width: 20px;
+    }
+    @media (max-width: 900px) {
+      body { overflow: auto; flex-direction: column; }
+      .auth-right { display: none; }
+      .auth-left { padding: 60px 28px; }
+    }
+    .auth-logo-img{
+    height:60px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+}
+  </style>
+</head>
+<body>
+  <div class="auth-left">
+    <div class="auth-left-inner">
+      <a href="home.html" class="auth-logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="auth-logo-img">
+</a>
+      <h1>Welcome <span class="gradient-text">Back</span></h1>
+      <p>Sign in to access your lab dashboard and AI insights.</p>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="you@institution.edu" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="••••••••••" required>
+          </div>
+        </div>
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember">
+            Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn-auth" id="loginBtn">
+          Sign In <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+        </button>
+      </form>
+      <div class="auth-divider">or continue with</div>
+      <button class="btn-social">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" fill="#34A853"/><path d="M3.964 10.71c-.18-.54-.282-1.117-.282-1.71s.102-1.17.282-1.71V4.958H.957C.347 6.173 0 7.548 0 9s.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+        Continue with Google
+      </button>
+      <button class="btn-social">
+        <i class="fab fa-microsoft" style="color:#00a4ef;font-size:16px;"></i>
+        Continue with Microsoft
+      </button>
+      <div class="auth-footer">
+        Don't have an account? <a href="signup.html">Sign up free</a>
+      </div>
+    </div>
+  </div>
+  <div class="auth-right">
+    <div class="auth-right-content">
+      <svg class="auth-dna-svg" viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="58" stroke="rgba(86,210,255,0.2)" stroke-width="1"/>
+        <circle cx="60" cy="60" r="40" stroke="rgba(86,210,255,0.15)" stroke-width="1"/>
+        <path d="M35 25 Q60 42 85 25 Q60 42 35 60 Q60 78 85 60 Q60 78 35 95" stroke="#56d2ff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M85 25 Q60 42 35 25 Q60 42 85 60 Q60 78 35 60 Q60 78 85 95" stroke="#0fa4af" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <circle cx="60" cy="42" r="4" fill="#56d2ff" opacity="0.8"/>
+        <circle cx="60" cy="60" r="4" fill="white" opacity="0.8"/>
+        <circle cx="60" cy="78" r="4" fill="#0fa4af" opacity="0.8"/>
+      </svg>
+      <h2>Your Lab in the <span class="gradient-text">Cloud</span></h2>
+      <p>Access all your research data, AI-powered insights and team collaboration tools from anywhere.</p>
+      <ul class="auth-features">
+        <li><i class="fas fa-check-circle"></i> Real-time genomic analysis results</li>
+        <li><i class="fas fa-check-circle"></i> Secure, HIPAA-compliant data storage</li>
+        <li><i class="fas fa-check-circle"></i> AI-powered variant interpretation</li>
+        <li><i class="fas fa-check-circle"></i> Collaborative team workspaces</li>
+        <li><i class="fas fa-check-circle"></i> Automated regulatory reports</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+      btn.disabled = true;
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

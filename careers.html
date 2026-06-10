@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — BioNexus</title>
+  <meta name="description" content="Join BioNexus and help build the future of precision medicine. Explore open positions in genomics, AI, engineering and more.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 7% 70px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(86,210,255,0.13), transparent 50%),
+        linear-gradient(135deg, #010611, #04172d, #021327);
+    }
+    .page-hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(86,210,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86,210,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .page-hero h1 { font-size: clamp(36px,5vw,60px); font-weight:800; margin-bottom:16px; position:relative; }
+    .page-hero p { font-size: 18px; color: var(--text-muted); max-width: 580px; margin: 0 auto; position:relative; }
+    .perks-section { padding: 80px 7%; }
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 22px;
+      margin-top: 50px;
+    }
+    .perk-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px 22px;
+      text-align: center;
+      transition: all 0.4s;
+    }
+    .perk-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(86,210,255,0.2);
+    }
+    .perk-icon { font-size: 36px; margin-bottom: 14px; }
+    .perk-card h3 { font-size: 16px; margin-bottom: 8px; }
+    .perk-card p { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+    .jobs-section { padding: 80px 7%; background: rgba(255,255,255,0.02); }
+    .jobs-list { display: flex; flex-direction: column; gap: 16px; margin-top: 50px; }
+    .job-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s;
+      gap: 20px;
+    }
+    .job-card:hover {
+      border-color: rgba(86,210,255,0.25);
+      background: rgba(86,210,255,0.03);
+      transform: translateX(4px);
+    }
+    .job-info h3 { font-size: 18px; color: var(--white); margin-bottom: 8px; }
+    .job-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    .job-tag {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .tag-dept { color: var(--primary); border-color: rgba(86,210,255,0.25); background: rgba(86,210,255,0.07); }
+    .tag-type { color: #a78bfa; border-color: rgba(167,139,250,0.25); background: rgba(167,139,250,0.07); }
+    .tag-loc  { color: #34d399; border-color: rgba(52,211,153,0.25); background: rgba(52,211,153,0.07); }
+    .job-apply { flex-shrink:0; }
+    @media (max-width:900px) {
+      .perks-grid { grid-template-columns: repeat(2,1fr); }
+      .job-card { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width:500px) {
+      .perks-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="logo-img">
+</div>
+    <nav id="nav">
+      <a href="home.html" class="nav-link">HOME</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="blog.html" class="nav-link">BLOG</a>
+      <a href="careers.html" class="nav-link active">CAREERS</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="header-right">
+      <a href="login.html" class="btn-login">Log In</a>
+      <a href="signup.html" class="btn-signup">Sign Up Free</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span class="logo-text" style="color:#56d2ff;font-weight:800;font-size:22px;">STACKLY</span>
+      <button class="mobile-close" id="menuClose"><i class="fas fa-times"></i></button>
+    </div>
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="blog.html">BLOG</a>
+    <a href="careers.html">CAREERS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html" class="mobile-login">LOG IN</a>
+    <a href="signup.html" class="mobile-signup">SIGN UP FREE</a>
+  </div>
+  <section class="page-hero">
+    <div>
+      <span class="section-tag">We're Hiring</span>
+      <h1>Build the Future of<br><span class="gradient-text">Precision Medicine</span></h1>
+      <p>Join a team of scientists, engineers and clinicians on a mission to transform how diseases are diagnosed and treated.</p>
+    </div>
+  </section>
+  <section class="perks-section">
+    <div class="section-header">
+      <span class="section-tag">Why BioNexus</span>
+      <h2>More Than a <span class="gradient-text">Job</span></h2>
+      <p>We believe the best science happens when people thrive. Here's what we offer.</p>
+    </div>
+    <div class="perks-grid">
+      <div class="perk-card">
+        <div class="perk-icon">🌍</div>
+        <h3>Remote-First Culture</h3>
+        <p>Work from anywhere in the world with async-first collaboration and quarterly team retreats.</p>
+      </div>
+      <div class="perk-card" style="background:linear-gradient(135deg,rgba(86,210,255,0.07),rgba(15,164,175,0.04));border-color:rgba(86,210,255,0.2);">
+        <div class="perk-icon">💡</div>
+        <h3>Research Freedom</h3>
+        <p>20% of your time is yours for exploratory research. We publish, open-source and patent together.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🏥</div>
+        <h3>Full Health Coverage</h3>
+        <p>Premium medical, dental and vision insurance. 100% employee coverage, 80% for dependents.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">📈</div>
+        <h3>Equity & Impact</h3>
+        <p>Meaningful equity in a Series C company. Your work directly impacts patient outcomes globally.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🎓</div>
+        <h3>$5K Learning Budget</h3>
+        <p>Annual education stipend for courses, conferences, certifications and publications.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🧬</div>
+        <h3>Sequencing Perks</h3>
+        <p>Free personal whole genome sequencing and access to our full platform for personal projects.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">⏰</div>
+        <h3>Flexible Hours</h3>
+        <p>Core hours 10am-3pm in your timezone. Build your schedule around your peak creativity.</p>
+      </div>
+      <div class="perk-card" style="background:linear-gradient(135deg,rgba(86,210,255,0.07),rgba(15,164,175,0.04));border-color:rgba(86,210,255,0.2);">
+        <div class="perk-icon">🚀</div>
+        <h3>Rapid Growth</h3>
+        <p>We're growing 80% YoY. Early team members have clear paths to leadership and specialization.</p>
+      </div>
+    </div>
+  </section>
+  <section class="jobs-section">
+    <div class="section-header">
+      <span class="section-tag">Open Positions</span>
+      <h2>Find Your <span class="gradient-text">Role</span></h2>
+      <p>We're looking for exceptional people across all disciplines. Remote-friendly unless noted.</p>
+    </div>
+    <div class="jobs-list">
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Senior Bioinformatics Engineer</h3>
+          <div class="job-tags">
+            <span class="job-tag tag-dept">Genomics</span>
+            <span class="job-tag tag-type">Full-time</span>
+            <span class="job-tag tag-loc">Remote</span>
+          </div>
+        </div>
+        <div class="job-apply">
+          <a href="#" class="btn-outline">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Machine Learning Scientist — Genomics</h3>
+          <div class="job-tags">
+            <span class="job-tag tag-dept">AI Research</span>
+            <span class="job-tag tag-type">Full-time</span>
+            <span class="job-tag tag-loc">Remote</span>
+          </div>
+        </div>
+        <div class="job-apply">
+          <a href="#" class="btn-outline">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Clinical Research Scientist</h3>
+          <div class="job-tags">
+            <span class="job-tag tag-dept">Clinical</span>
+            <span class="job-tag tag-type">Full-time</span>
+            <span class="job-tag tag-loc">Boston, MA</span>
+          </div>
+        </div>
+        <div class="job-apply">
+          <a href="#" class="btn-outline">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Full-Stack Engineer (Platform)</h3>
+          <div class="job-tags">
+            <span class="job-tag tag-dept">Engineering</span>
+            <span class="job-tag tag-type">Full-time</span>
+            <span class="job-tag tag-loc">Remote</span>
+          </div>
+        </div>
+        <div class="job-apply">
+          <a href="#" class="btn-outline">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Lab Automation Scientist</h3>
+          <div class="job-tags">
+            <span class="job-tag tag-dept">Lab Ops</span>
+            <span class="job-tag tag-type">Full-time</span>
+            <span class="job-tag tag-loc">San Francisco, CA</span>
+          </div>
+        </div>
+        <div class="job-apply">
+          <a href="#" class="btn-outline">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Product Designer (UX/UI)</h3>
+          <div class="job-tags">
+            <span class="job-tag tag-dept">Design</span>
+            <span class="job-tag tag-type">Full-time</span>
+            <span class="job-tag tag-loc">Remote</span>
+          </div>
+        </div>
+        <div class="job-apply">
+          <a href="#" class="btn-outline">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-content">
+      <span class="section-tag">Don't See Your Role?</span>
+      <h2>We're Always Looking for <span class="gradient-text">Exceptional People</span></h2>
+      <p>Send us your CV and tell us how you'd contribute to BioNexus's mission.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary btn-large">Send Your CV <i class="fas fa-paper-plane"></i></a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 BioNexus, Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

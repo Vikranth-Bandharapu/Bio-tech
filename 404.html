@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found | Stackly</title>
+<link rel="stylesheet" href="404.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(
+        135deg,
+        #010611,
+        #04172d,
+        #021327
+    );
+}
+
+/* Floating circles */
+
+.bg-circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(60px);
+    animation:float 8s infinite ease-in-out;
+}
+
+.circle1{
+    width:300px;
+    height:300px;
+    background:#56d2ff55;
+    top:5%;
+    left:5%;
+}
+
+.circle2{
+    width:250px;
+    height:250px;
+    background:#0fa4af55;
+    bottom:10%;
+    right:8%;
+}
+
+.circle3{
+    width:180px;
+    height:180px;
+    background:#56d2ff44;
+    top:55%;
+    left:45%;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-25px);
+    }
+}
+
+.error-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.glass-card{
+    width:600px;
+    max-width:100%;
+    padding:60px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4),
+    0 0 40px rgba(86,210,255,.15);
+}
+
+.glass-card h1{
+    font-size:140px;
+    font-weight:800;
+    line-height:1;
+
+    background:linear-gradient(
+        135deg,
+        #56d2ff,
+        #0fa4af
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.glass-card h2{
+    font-size:32px;
+    color:white;
+    margin-top:10px;
+}
+
+.glass-card p{
+    color:#b8cbe0;
+    margin-top:20px;
+    line-height:1.8;
+}
+
+.home-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:35px;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #56d2ff,
+        #0fa4af
+    );
+
+    color:#001324;
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.home-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 15px 30px rgba(86,210,255,.3);
+}
+
+@media(max-width:768px){
+
+    .glass-card{
+        padding:40px 25px;
+    }
+
+    .glass-card h1{
+        font-size:90px;
+    }
+
+    .glass-card h2{
+        font-size:24px;
+    }
+}
+</style>
+<body>
+
+<div class="bg-circle circle1"></div>
+<div class="bg-circle circle2"></div>
+<div class="bg-circle circle3"></div>
+
+<div class="error-container">
+
+    <div class="glass-card">
+
+        <h1>404</h1>
+
+        <h2>Oops! Page Not Found</h2>
+
+        <p>
+            The page you are looking for might have been removed,
+            renamed, or temporarily unavailable.
+        </p>
+
+        <a href="home.html" class="home-btn">
+            <i class="fas fa-home"></i>
+            Back To Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

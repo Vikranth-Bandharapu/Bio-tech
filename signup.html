@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — BioNexus</title>
+  <meta name="description" content="Create your free BioNexus account and start transforming your research workflow today.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      background: #010611;
+      color: white;
+      overflow-x: hidden;
+    }
+    .auth-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(86,210,255,0.12), transparent 45%),
+        linear-gradient(135deg, #010611, #04172d, #021327);
+    }
+    .auth-left-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+      width: 100%;
+    }
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .auth-logo span {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg,#0fa4af,#56d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg,#0fa4af,#56d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .auth-left h1 { font-size: 34px; font-weight: 800; margin-bottom: 10px; }
+    .auth-left > .subtitle { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.65); margin-bottom: 7px; letter-spacing: 0.3px; }
+    .input-wrap { position: relative; }
+    .input-wrap i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #56d2ff; font-size: 14px; }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 13px 14px 13px 40px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 11px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      transition: all 0.3s;
+    }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: #04172d; }
+    .form-group input:focus, .form-group select:focus {
+      border-color: rgba(86,210,255,0.5);
+      background: rgba(86,210,255,0.04);
+      box-shadow: 0 0 0 3px rgba(86,210,255,0.08);
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+    .password-strength {
+      margin-top: 8px;
+      display: flex;
+      gap: 4px;
+    }
+    .strength-bar {
+      flex: 1;
+      height: 3px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.1);
+      transition: background 0.3s;
+    }
+    .strength-bar.active-weak   { background: #ef4444; }
+    .strength-bar.active-medium { background: #f59e0b; }
+    .strength-bar.active-strong { background: #10b981; }
+    .terms-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 18px 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      cursor: pointer;
+    }
+    .terms-check input { margin-top: 2px; flex-shrink: 0; }
+    .terms-check a { color: #56d2ff; }
+    .btn-auth {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      background: white;
+      color: #001324;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-auth:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(86,210,255,0.25);
+    }
+    .auth-footer {
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 20px;
+    }
+    .auth-footer a { color: #56d2ff; font-weight: 600; }
+    /* RIGHT PANEL */
+    .auth-right {
+      width: 400px;
+      background: linear-gradient(135deg, rgba(86,210,255,0.06), rgba(15,164,175,0.04));
+      border-left: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .auth-right::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle,rgba(86,210,255,0.1),transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .auth-right-content { position: relative; z-index: 2; text-align: center; }
+    .plan-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(86,210,255,0.15);
+      border-radius: 16px;
+      padding: 30px 24px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+      cursor: pointer;
+      text-align: left;
+    }
+    .plan-card:hover, .plan-card.selected {
+      background: rgba(86,210,255,0.07);
+      border-color: rgba(86,210,255,0.35);
+    }
+    .plan-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: linear-gradient(135deg,#0fa4af,#56d2ff);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #001324;
+      margin-bottom: 12px;
+    }
+    .plan-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .plan-price { font-size: 28px; font-weight: 800; color: #56d2ff; margin-bottom: 14px; }
+    .plan-price span { font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 400; }
+    .plan-features { list-style: none; }
+    .plan-features li { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .plan-features li i { color: #56d2ff; font-size: 12px; }
+    @media (max-width: 900px) {
+      .auth-right { display: none; }
+      .auth-left { padding: 50px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .auth-logo-img{
+    height:60px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+}
+  </style>
+</head>
+<body>
+  <div class="auth-left">
+    <div class="auth-left-inner">
+    <a href="home.html" class="auth-logo">
+    <img src="Assests/logo.webp" alt="Stackly Logo" class="auth-logo-img">
+</a>
+      <h1>Start Your <span class="gradient-text">Free Trial</span></h1>
+      <p class="subtitle">Join 500+ research institutions transforming biotech with BioNexus.</p>
+      <form id="signupForm" onsubmit="handleSignup(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="firstName" placeholder="Ananya" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="lastName" placeholder="Krishnan" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Institution Email</label>
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="signupEmail" placeholder="you@university.edu" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="institution">Institution / Organization</label>
+          <div class="input-wrap">
+            <i class="fas fa-building"></i>
+            <input type="text" id="institution" placeholder="MIT, Johns Hopkins, etc.">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="role">Your Role</label>
+          <div class="input-wrap">
+            <i class="fas fa-id-badge"></i>
+            <select id="role">
+              <option value="">Select your role...</option>
+              <option>Principal Investigator</option>
+              <option>Lab Manager</option>
+              <option>Research Scientist</option>
+              <option>Bioinformatician</option>
+              <option>Clinician / Physician</option>
+              <option>Student / Trainee</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Create Password</label>
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="signupPassword" placeholder="Min. 8 characters" required oninput="checkStrength(this.value)">
+          </div>
+          <div class="password-strength">
+            <div class="strength-bar" id="sb1"></div>
+            <div class="strength-bar" id="sb2"></div>
+            <div class="strength-bar" id="sb3"></div>
+            <div class="strength-bar" id="sb4"></div>
+          </div>
+        </div>
+        <label class="terms-check">
+          <input type="checkbox" id="terms" required>
+          I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </label>
+        <button type="submit" class="btn-auth" id="signupBtn">
+          Create Free Account <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+        </button>
+      </form>
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign in</a>
+      </div>
+    </div>
+  </div>
+  <div class="auth-right">
+    <div class="auth-right-content">
+      <div class="plan-card selected">
+        <div class="plan-badge">MOST POPULAR</div>
+        <div class="plan-name">Researcher Pro</div>
+        <div class="plan-price">Free <span>for 30 days</span></div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> 10 whole genome sequences/month</li>
+          <li><i class="fas fa-check"></i> AI variant interpretation</li>
+          <li><i class="fas fa-check"></i> 5 team members</li>
+          <li><i class="fas fa-check"></i> 100GB cloud storage</li>
+          <li><i class="fas fa-check"></i> 24/7 support</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Institution</div>
+        <div class="plan-price">$499 <span>/month</span></div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> Unlimited sequencing</li>
+          <li><i class="fas fa-check"></i> Unlimited team members</li>
+          <li><i class="fas fa-check"></i> 10TB cloud storage</li>
+          <li><i class="fas fa-check"></i> Custom integrations</li>
+          <li><i class="fas fa-check"></i> Dedicated support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    function checkStrength(val) {
+      const bars = ['sb1','sb2','sb3','sb4'];
+      let score = 0;
+      if (val.length >= 8) score++;
+      if (/[A-Z]/.test(val)) score++;
+      if (/[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+      bars.forEach((id, i) => {
+        const el = document.getElementById(id);
+        el.className = 'strength-bar';
+        if (i < score) {
+          if (score <= 1) el.classList.add('active-weak');
+          else if (score <= 2) el.classList.add('active-medium');
+          else el.classList.add('active-strong');
+        }
+      });
+    }
+    function handleSignup(e) {
+      e.preventDefault();
+      const btn = document.getElementById('signupBtn');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+      btn.disabled = true;
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
